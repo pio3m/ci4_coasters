@@ -1,7 +1,3 @@
-### **📌 README dla projektu "System Kolejek Górskich"**
-
----
-
 # 🎢 **System Kolejek Górskich - API**
 🚀 **Zaawansowany system zarządzania kolejkami górskimi**  
 🔧 **Technologie:** PHP 8.1, CodeIgniter 4, Redis, Nginx, Docker
