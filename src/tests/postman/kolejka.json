@@ -1,0 +1,87 @@
+{
+  "info": {
+    "_postman_id": "abcdef12-3456-7890-1234-56789abcdef",
+    "name": "Kolejka API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Dodaj kolejkę górską",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"liczba_personelu\": 16,\n    \"liczba_klientow\": 60000,\n    \"dl_trasy\": 1800,\n    \"godziny_od\": \"08:00\",\n    \"godziny_do\": \"16:00\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/coasters",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "coasters"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Dodaj wagon do kolejki",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ilosc_miejsc\": 32,\n    \"predkosc_wagonu\": 1.2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/coasters/{coasterId}/wagons",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "coasters", "{{coasterId}}", "wagons"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pobierz wagony dla kolejki",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/coasters/{coasterId}/wagons",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "coasters", "{{coasterId}}", "wagons"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Usuń wagon",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/coasters/{coasterId}/wagons/{wagonId}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "coasters", "{{coasterId}}", "wagons", "{{wagonId}}"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

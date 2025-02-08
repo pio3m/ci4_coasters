@@ -1,0 +1,63 @@
+CRITICAL - 2025-02-06 09:50:03 --> Error: Call to undefined method App\Services\RedisService::getWagonsForCoaster()
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/CapacityService.php on line 37.
+ 1 APPPATH/Services/StatisticsService.php(31): App\Services\CapacityService->checkCapacity('dev_coaster:679e400ccaf33')
+ 2 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 4 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 5 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-06 09:55:20 --> [2025-02-06 09:55:20] Kolejka dev_coaster:679e400ccaf33 - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+CRITICAL - 2025-02-06 09:55:20 --> ArgumentCountError: Too few arguments to function App\Services\RedisService::publishEvent(), 2 passed in /var/www/html/app/Services/StatisticsService.php on line 73 and exactly 3 expected
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/RedisService.php on line 75.
+ 1 APPPATH/Services/StatisticsService.php(73): App\Services\RedisService->publishEvent('dev_coaster_alerts', '{"coaster_id":"dev_coaster:679e400ccaf33","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:55:20"}')
+ 2 APPPATH/Services/StatisticsService.php(43): App\Services\StatisticsService->logIssue('dev_coaster:679e400ccaf33', 'Problem: Brakuje 1875 wagonów, brak 0 pracowników', [...])
+ 3 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e400ccaf33 - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e3e6cde35b - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e3fc35d8b3 - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e400ccaf33] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e400ccaf33","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e3e6cde35b] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e3e6cde35b","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3cc81a151c - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e3fc35d8b3] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e3fc35d8b3","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3ca42233ff - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3cc81a151c] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3cc81a151c","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3d3843cbe5 - Problem: Brakuje 19 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3ca42233ff] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3ca42233ff","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3d18a7d3ec - Problem: Brakuje 19 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3d3843cbe5] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3d3843cbe5","type":"alert","missing_wagons":19,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3d18a7d3ec] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3d18a7d3ec","type":"alert","missing_wagons":19,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e3fcf3f20b - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e3fcf3f20b] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e3fcf3f20b","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e410a0b2f2 - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e410a0b2f2] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e410a0b2f2","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e40b604d9a - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e40b604d9a] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e40b604d9a","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3897522a21 - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:679e3fabc1d40 - Problem: Brakuje 1875 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3897522a21] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3897522a21","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3ccd17a43b - Problem: Brakuje 19 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:679e3fabc1d40] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:679e3fabc1d40","type":"alert","missing_wagons":1875,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+ERROR - 2025-02-06 09:58:22 --> [2025-02-06 09:58:22] Kolejka dev_coaster:67a3cd0165b96 - Problem: Brakuje 19 wagonów, brak 0 pracowników
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3ccd17a43b] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3ccd17a43b","type":"alert","missing_wagons":19,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+INFO - 2025-02-06 09:58:22 --> [dev_coaster:67a3cd0165b96] Zdarzenie: alert | Szczegóły: {"coaster_id":"dev_coaster:67a3cd0165b96","type":"alert","missing_wagons":19,"missing_personnel":0,"timestamp":"2025-02-06 09:58:22"}
+CRITICAL - 2025-02-06 09:59:22 --> RedisException: read error on connection to redis:6379
+[Method: CLI, Route: monitor]
+in APPPATH/Services/MonitorService.php on line 32.
+ 1 APPPATH/Services/MonitorService.php(32): Redis->subscribe([...], Object(Closure))
+ 2 APPPATH/Commands/Monitor.php(17): App\Services\MonitorService->run()
+ 3 SYSTEMPATH/CLI/Commands.php(70): App\Commands\Monitor->run([])
+ 4 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('monitor', [])
+ 5 SYSTEMPATH/Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-02-06 17:08:23 --> [2025-02-06 17:08:23] Kolejka dev_coaster:67a4ec752159f - Problem: Brakuje 19 wagonów, brak 0 pracowników

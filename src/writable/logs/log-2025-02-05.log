@@ -1,0 +1,108 @@
+INFO - 2025-02-05 20:39:05 --> [67a3ca42233ff] Zdarzenie: wagon_added | Szczegóły: {"wagon_id":"wagon_67a3cc6926938","data":{"ilosc_miejsc":32,"predkosc_wagonu":5}}
+INFO - 2025-02-05 20:39:29 --> [67a3cc81a151c] Zdarzenie: coaster_created | Szczegóły: {"liczba_personelu":16,"liczba_klientow":60000,"dl_trasy":1800,"godziny_od":"08:00","godziny_do":"16:00"}
+CRITICAL - 2025-02-05 20:40:29 --> RedisException: read error on connection to redis:6379
+[Method: CLI, Route: monitor]
+in APPPATH/Services/MonitorService.php on line 32.
+ 1 APPPATH/Services/MonitorService.php(32): Redis->subscribe([...], Object(Closure))
+ 2 APPPATH/Commands/Monitor.php(17): App\Services\MonitorService->run()
+ 3 SYSTEMPATH/CLI/Commands.php(70): App\Commands\Monitor->run([])
+ 4 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('monitor', [])
+ 5 SYSTEMPATH/Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+INFO - 2025-02-05 20:41:37 --> [67a3cd0165b96] Zdarzenie: coaster_created | Szczegóły: {"liczba_personelu":3,"liczba_klientow":600,"dl_trasy":2000,"godziny_od":"08:00","godziny_do":"18:00"}
+CRITICAL - 2025-02-05 20:42:37 --> RedisException: read error on connection to redis:6379
+[Method: CLI, Route: monitor]
+in APPPATH/Services/MonitorService.php on line 32.
+ 1 APPPATH/Services/MonitorService.php(32): Redis->subscribe([...], Object(Closure))
+ 2 APPPATH/Commands/Monitor.php(17): App\Services\MonitorService->run()
+ 3 SYSTEMPATH/CLI/Commands.php(70): App\Commands\Monitor->run([])
+ 4 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('monitor', [])
+ 5 SYSTEMPATH/Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-02-05 20:44:22 --> Error: Call to undefined method App\Services\RedisService::getAllCoasters()
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/StatisticsService.php on line 26.
+ 1 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 20:45:37 --> Error: Call to undefined method App\Services\RedisService::getAllCoasters()
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/StatisticsService.php on line 26.
+ 1 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 20:46:05 --> Error: Call to undefined method App\Services\RedisService::getAllCoasters()
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/StatisticsService.php on line 26.
+ 1 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 20:48:20 --> ErrorException: Undefined array key "missing_wagons"
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/StatisticsService.php on line 35.
+ 1 APPPATH/Services/StatisticsService.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "missing_wagons"', '/var/www/html/app/Services/StatisticsService.php', 35)
+ 2 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 4 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 5 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-05 21:00:58 --> [67a3d18a7d3ec] Zdarzenie: coaster_created | Szczegóły: {"liczba_personelu":3,"liczba_klientow":600,"dl_trasy":2000,"godziny_od":"08:00","godziny_do":"18:00"}
+INFO - 2025-02-05 21:01:14 --> [67a3d18a7d3ec] Zdarzenie: wagon_added | Szczegóły: {"wagon_id":"wagon_67a3d19a74ac3","data":{"ilosc_miejsc":32,"predkosc_wagonu":5}}
+CRITICAL - 2025-02-05 21:01:23 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: api/statistics]
+in APPPATH/Services/StatisticsService.php on line 44.
+ 1 APPPATH/Services/StatisticsService.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/var/www/html/app/Services/StatisticsService.php', 44)
+ 2 APPPATH/Controllers/CoastersController.php(53): App\Services\StatisticsService->getSystemStatistics()
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\CoastersController->getStatistics()
+ 4 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoastersController))
+ 5 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 21:02:14 --> RedisException: read error on connection to redis:6379
+[Method: CLI, Route: monitor]
+in APPPATH/Services/MonitorService.php on line 32.
+ 1 APPPATH/Services/MonitorService.php(32): Redis->subscribe([...], Object(Closure))
+ 2 APPPATH/Commands/Monitor.php(17): App\Services\MonitorService->run()
+ 3 SYSTEMPATH/CLI/Commands.php(70): App\Commands\Monitor->run([])
+ 4 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('monitor', [])
+ 5 SYSTEMPATH/Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-02-05 21:08:08 --> RedisException: read error on connection to redis:6379
+[Method: CLI, Route: monitor]
+in APPPATH/Services/MonitorService.php on line 32.
+ 1 APPPATH/Services/MonitorService.php(32): Redis->subscribe([...], Object(Closure))
+ 2 APPPATH/Commands/Monitor.php(17): App\Services\MonitorService->run()
+ 3 SYSTEMPATH/CLI/Commands.php(70): App\Commands\Monitor->run([])
+ 4 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('monitor', [])
+ 5 SYSTEMPATH/Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+INFO - 2025-02-05 21:09:24 --> [67a3d3843cbe5] Zdarzenie: coaster_created | Szczegóły: {"liczba_personelu":2,"liczba_klientow":600,"dl_trasy":2000,"godziny_od":"08:00","godziny_do":"18:00"}
+CRITICAL - 2025-02-05 21:10:24 --> RedisException: read error on connection to redis:6379
+[Method: CLI, Route: monitor]
+in APPPATH/Services/MonitorService.php on line 32.
+ 1 APPPATH/Services/MonitorService.php(32): Redis->subscribe([...], Object(Closure))
+ 2 APPPATH/Commands/Monitor.php(17): App\Services\MonitorService->run()
+ 3 SYSTEMPATH/CLI/Commands.php(70): App\Commands\Monitor->run([])
+ 4 SYSTEMPATH/CLI/Console.php(48): CodeIgniter\CLI\Commands->run('monitor', [])
+ 5 SYSTEMPATH/Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH/Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
